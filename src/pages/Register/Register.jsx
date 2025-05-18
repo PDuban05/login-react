@@ -124,7 +124,7 @@ const Register = () => {
         title: "Te has registrado con éxito"
       }).then(() => {
         dispatch(addUserFailure());
-        navigate("/login");
+        navigate("/");
       });
     }
     if (error) {
