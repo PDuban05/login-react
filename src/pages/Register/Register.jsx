@@ -231,7 +231,7 @@ const Register = () => {
           </StyledDivForm>
           <StyledFooterForm>
             <Text4>¿Ya tienes una cuenta?</Text4>
-            <StyledLink to="/login">Iniciar sesión</StyledLink>
+            <StyledLink to="/">Iniciar sesión</StyledLink>
           </StyledFooterForm>
         </StyledForm>
       </Container>
