@@ -6,6 +6,7 @@ import { StyledLink, Text2, Text4 } from "../../components/styledComponets/Text/
 import ThemeProvider from "../../components/styledComponets/Theme/ThemeProvider";
 import Footer from "../../components/Footer/footer";
 import { StyledButton } from "../../components/styledComponets/Bottons/botton";
+import { logout } from "../../redux/states/AuthUser";
 
 const Dashboard = () => {
   const { success, error, user } = useSelector((state) => state.auth);
@@ -32,6 +33,11 @@ const Dashboard = () => {
     }
   }, [user, success, error, navigate]);
 
+  const handleLogout = () => {
+  dispatch(logout());
+  navigate("/");
+};
+
   return (
     <ThemeProvider>
       <Container>
@@ -41,6 +47,7 @@ const Dashboard = () => {
           <Text4> <strong>Apellido: </strong>   {user?.lastName || "No disponible"}</Text4>
           <Text4> <strong>Cédula: </strong> {user?.dni || "No disponible"}</Text4>
           <Text4><strong>token:</strong>  {user?.token || "No disponible"}</Text4>
+         <StyledButton onClick={handleLogout}>Salir</StyledButton>
         </div>
           
       </Container>
