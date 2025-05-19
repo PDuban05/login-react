@@ -31,6 +31,14 @@ const Dashboard = () => {
     }
   }, [user, success, error, navigate]);
 
+
+  useEffect(() => {
+    return () => {
+      // Cuando el componente se desmonta (incluyendo al navegar atrás)
+      navigate('/login', { replace: true });
+    };
+  }, [navigate]);
+
   return (
     <ThemeProvider>
       <Container>
