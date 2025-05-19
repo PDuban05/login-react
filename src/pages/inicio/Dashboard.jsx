@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Container } from "../../components/styledComponets/Containers/Containers";
-import { Text2, Text4 } from "../../components/styledComponets/Text/Text";
+import { StyledLink, Text2, Text4 } from "../../components/styledComponets/Text/Text";
 import ThemeProvider from "../../components/styledComponets/Theme/ThemeProvider";
 import Footer from "../../components/Footer/footer";
+import { StyledButton } from "../../components/styledComponets/Bottons/botton";
 
 const Dashboard = () => {
   const { success, error, user } = useSelector((state) => state.auth);
@@ -30,14 +31,6 @@ const Dashboard = () => {
       }));
     }
   }, [user, success, error, navigate]);
-
-
-  useEffect(() => {
-    return () => {
-      // Cuando el componente se desmonta (incluyendo al navegar atrás)
-      navigate('/login', { replace: true });
-    };
-  }, [navigate]);
 
   return (
     <ThemeProvider>

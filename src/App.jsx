@@ -1,7 +1,9 @@
 import {
   BrowserRouter,
+  Navigate,
   Route,
-  Routes
+  Routes,
+  useNavigate
 } from "react-router-dom";
 import './App.css';
 import Register from './pages/Register/Register';
@@ -16,9 +18,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
          <Route path="/dashboard" element={<Dashboard />} />
+         <Route path="*" element={<Navigate to="/" />} />
+
       </Routes>
     </BrowserRouter>
 
